@@ -1,0 +1,473 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <meta content="" property="og:title">
+  <meta content="" property="og:type">
+  <meta content="" property="og:url">
+  <meta content="" property="og:image">
+
+  <link href="site.webmanifest" rel="manifest">
+  <link href="icon.png" rel="apple-touch-icon">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.scss" rel="stylesheet">
+
+  <meta content="#fafafa" name="theme-color">
+</head>
+
+<body>
+
+<!-- Add your site or application content here -->
+
+<!--header-->
+<div id="header">
+  <div class="in">
+    <div class="flex">
+      <div class="flex flex-pull-left">
+        <div class="logo">
+        </div>
+        <div id="top-menu">
+          <ul>
+            <li><a href="/about">О нас</a></li>
+            <li><a href="/category">Каталог</a></li>
+            <li><a href="/blog">Блог</a></li>
+            <li><a href="/contacts">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-pull-right">
+        <div class="top-selector-wrapper">
+          <div class="top-selector-wrapper__title">Скупка радиодеталей в</div>
+          <div class="selector top-selector">
+            <div class="selector-title"><span>Санкт-Петербурге</span></div>
+            <ul class="selector-dd">
+              <li class="active"><span data-title="Санкт-Петербурге">Санкт-Петербург</span></li>
+              <li><span data-title="Краснодаре">Краснодар</span></li>
+              <li><span data-title="Новосибирске">Новосибирск</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="top-telephone">
+          <a href="tel:84956698860">8 495 669 88 60</a>
+        </div>
+        <div class="btn-group top-btn-group">
+          <a class="btn btn-primary" href="#">Оставить заявку</a>
+          <a class="btn btn-secondary" href="#">Скачать прайс</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of header-->
+
+<!--main page slider-->
+<div class="main-page--slider-wrapper">
+  <div id="main-page--slider">
+
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="slide-wrap slide-wrap-bg1">
+            <div class="in">
+              <div class="flex">
+                <div class="title">Продать радиолом просто!</div>
+                <div class="desc">Вам никуда не нужно ездить, сформируйте заказ или свяжитесь с нами и мы сами приедем
+                  покупать
+                  у вас радиодетали.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-wrap slide-wrap-bg2">
+            <div class="in">
+              <div class="flex">
+                <div class="title">Продать радиолом просто22222!</div>
+                <div class="desc">Вам никуда не нужно ездить, сформируйте заказ или свяжитесь с нами и мы сами приедем
+                  покупать
+                  у вас радиодетали.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-wrap slide-wrap-bg2">
+            <div class="in">
+              <div class="flex">
+                <div class="title">Продать радиолом просто22222!</div>
+                <div class="desc">Вам никуда не нужно ездить, сформируйте заказ или свяжитесь с нами и мы сами приедем
+                  покупать
+                  у вас радиодетали.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="in">
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of main page slider-->
+
+<!--calculator module-->
+<div class="in">
+  <div class="calculator gray-radio-bg" id="main-page--calculator">
+    <div class="els-header">Что продаёте?</div>
+    <div class="flex els-body">
+      <div class="els-row">
+        <div class="el-wrap">
+          <select id="el-type" name="el-type">
+            <option disabled hidden selected value="">Выберите тип элемента</option>
+          </select>
+        </div>
+        <div class="el-wrap">
+          <select id="el-name" name="el-name">
+            <option disabled hidden selected value="">Наименование</option>
+          </select>
+        </div>
+        <div class="el-wrap radio-group">
+          <div id="itemprice"></div>
+          <!--<input checked id="row1_1" name="el-condition" type="radio"><label for="row1_1">Б/у</label>
+          <input id="row1_2" name="el-condition" type="radio"><label for="row1_2">Новый</label>-->
+        </div>
+        <div class="el-wrap labeled-input">
+          <label>Количество
+            <input placeholder="шт." type="text" value=""/>
+          </label>
+        </div>
+        <div class="el-wrap labeled-input input-dark">
+          <label>Сумма</label>
+          <div class="row-total">9400 ₽</div>
+        </div>
+      </div>
+    </div>
+    <div class="els-footer">
+      <div class="el-add-row-btn">
+        <div class="btn-plus"><span>+</span></div>
+        Добавить элемент
+      </div>
+      <div class="els-total-price">
+        <span class="yellow-rounded">Итого</span>
+        <div class="els-total-price-num" id="els-total-price-num">
+          <span>7778</span> ₽
+        </div>
+      </div>
+      <div class="send-btn-wrapper">
+        <a class="btn btn-secondary" href="#">Оформить продажу</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of calculator module-->
+
+<!--main page categories-->
+<div class="main-page--categories-wrapper">
+  <div class="in">
+    <div class="flex-wrapper">
+      <div class="flex-grid">
+        <div class="d-col-2 t-col-2 m-col-2">
+          <div class="main-page--categories_title">
+            Скупаем радиолом оптом и в розницу
+          </div>
+          <div class="categories--btn-custom_wrapper">
+            <a class="categories--btn-custom" href="/category">
+              <span class="span-block">
+                <span>Весь каталог</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <a class="d-col-3 t-col-3 m-col-3 cat-block" href="#">
+          <div class="title">Конденсаторы</div>
+          <div class="pic pic-condensator"></div>
+        </a>
+        <div class="d-col-7 t-col-7 m-col-7">
+          <div class="flex flex-grid">
+            <a class="d-col-7-2 t-col-2 m-col-2 cat-block" href="#">
+              <div class="title">Транзисторы</div>
+              <div class="pic pic-tranzistor"></div>
+            </a>
+            <a class="d-col-7-2 t-col-7-2 m-col-7-2 cat-block" href="#">
+              <div class="title">Резисторы</div>
+              <div class="pic pic-rezistor"></div>
+            </a>
+            <a class="d-col-7-3 t-col-7-3 m-col-7-3 cat-block" href="#">
+              <div class="title">Микросхемы</div>
+              <div class="pic pic-microshema"></div>
+            </a>
+          </div>
+          <div class="flex flex-grid">
+            <a class="d-col-7-3 t-col-7-3 m-col-7-3 cat-block" href="#">
+              <div class="title">Катушки</div>
+              <div class="pic pic-katushka"></div>
+            </a>
+            <a class="d-col-7-2 t-col-7-2 m-col-7-2 cat-block" href="#">
+              <div class="title">Диоды</div>
+              <div class="pic pic-diod"></div>
+            </a>
+            <a class="d-col-7-2 t-col-7-2 m-col-7-2 cat-block" href="#">
+              <div class="title">Транзистор</div>
+              <div class="pic pic-tranzistor2"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of main page categories-->
+
+<!--how-to-sell-->
+<div class="block-hts">
+  <div class="in">
+    <h1>Как продать радиодетали?</h1>
+    <div class="h1_desc">
+      Не важно сколько радиодеталей у вас на руках. Радиолом можно сдать в любом количестве и по высокой цене. Скупка в
+      России принимает все радиодетали с содержанием драгметаллов.
+    </div>
+    <div class="flex hts-3-blocks">
+      <div class="custom-size--left">
+        <div class="title">Сформируйте продажу через калькулятор на сайте</div>
+        <div class="btn-group">
+          <a class="btn btn-white sm" href="#">Продать</a>
+        </div>
+        <div class="pic"><img alt="" src="/img/hts-10.png"></div>
+      </div>
+      <div class="custom-size--middle">
+        <div class="title">Либо отправьте фото нашему специалисту</div>
+        <div class="btn-group">
+          <a class="btn btn-white sm btn-wt" href="#">Вацап</a>
+          <a class="btn btn-white sm btn-vb" href="#">Вайбер</a>
+        </div>
+        <div class="pic"><img alt="" src="/img/hts-11.png"></div>
+      </div>
+      <div class="custom-size--right">
+        <div class="title">Либо закажите звоноки мы вам перезвоним</div>
+        <div class="btn-group">
+          <a class="btn btn-white sm" href="#">Звонок</a>
+        </div>
+        <div class="pic"><img alt="" src="/img/hts-12.png"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of how-to-sell-->
+
+<!--block process-->
+<div class="block-process">
+  <div class="in">
+    <h1>Процесс приема и оценки радиолома</h1>
+    <div class="flex">
+      <div class="fr4 block-process-1">
+        <div class="title">Осмотр и оценка</div>
+        <div class="desc">
+          Для удобства подсчета стоимости скупки радиодетали необходимо отсортировать и распределить по группам. Состав
+          радиодеталей определяется их стандартами.
+        </div>
+      </div>
+      <div class="fr4 block-process-2">
+        <div class="title">Спектральный анализ</div>
+        <div class="desc">
+          При необходимости установления фактического количества драгметаллов в б/у радиодеталях, которые клиент сдает в
+          скупку, используется только профессиональное оборудование-специальные XRF-анализаторы.
+        </div>
+      </div>
+      <div class="fr4 block-process-3">
+        <div class="title">Подсчет / взвешивание и оплата</div>
+        <div class="desc">
+          На основе полученных данных о составе материала происходит расчет стоимости подлежащего скупки радиолома. Цена
+          радиодеталей устанавливается по биржевым котировкам (LME) на момент установления стоимости.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of block process-->
+
+<!--block blog-->
+<div class="in">
+  <div class="main-page--blog gray-radio-bg">
+    <div class="flex">
+      <div class="blog--title">
+        <h2>Блог</h2>
+        <a class="btn-custom" href="/blog">Больше статей</a>
+      </div>
+      <div class="blog--item">
+        <a class="pic" href="#"><img alt="" src="/img/blog/blog-13.jpg"></a>
+        <a class="padded" href="#">
+          <span class="title">Где взять платину и как ее выгодно продать?</span>
+          <span class="desc">Стоимость продаваемого драгметалла формируется честно и открыто. Если вы лично доставляете свою партию, то оценка будет осуществляться в вашем присутствии и цена будет с вами согласована.</span>
+        </a>
+      </div>
+      <div class="blog--item">
+        <a class="pic" href="#"><img alt="" src="/img/blog/blog-14.jpg"></a>
+        <a class="padded" href="#">
+          <span class="title">Куда продать радиодетали?</span>
+          <span class="desc">Многие люди знают, что в электронном оборудовании, приборах содержатся детали из драгоценных металлов. У большого количества имеются в наличии подобные приборы и что на них возможно неплохо подзаработать.</span>
+        </a>
+      </div>
+      <div class="blog--item">
+        <a class="pic" href="#"><img alt="" src="/img/blog/blog-15.jpg"></a>
+        <a class="padded" href="#">
+          <span class="title">Микросхемы стоят денег</span>
+          <span class="desc">Микросхемы активно применяются в радиоэлектронной аппаратуре различных сфер и назначения. Является сложным микроэлектронным устройством, легко опознаваемым по значительному числу контактов, предназначенных для подключения.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of block blog-->
+
+<!--main-page-map-->
+<div class="main-page-map">
+  <div class="in">
+    <h1>Скупка радиодеталей в
+      <div class="selector main-page-map--selector">
+        <div class="selector-title">Санкт-Петербурге</div>
+        <ul class="selector-dd">
+          <li class="active"><span data-title="Санкт-Петербурге">Санкт-Петербург</span></li>
+          <li><span data-title="Краснодаре">Краснодар</span></li>
+          <li><span data-title="Новосибирске">Новосибирск</span></li>
+        </ul>
+      </div>
+    </h1>
+  </div>
+  <div class="map">
+    <iframe
+      frameborder="0"
+      height="410" src="https://yandex.ru/map-widget/v1/?um=constructor%3A20d4feb11df4425ab2ae6e2851e482f55e318556bf839f4c728556f7aae09868&amp;source=constructor" width="100%"></iframe>
+  </div>
+</div>
+<!--end of main-page-map-->
+
+<!--footer-->
+<div class="footer">
+  <div class="line1">
+    <div class="in">
+      <div class="flex">
+        <div class="left">
+          <span class="yellow-rounded">Ваш консультант</span>
+          <div class="name">Юрий Смирнов</div>
+          <div class="title">Специалист по работе с радиодеталями</div>
+          <div class="btn-group">
+            <a class="btn-ico wt" href="#"></a>
+            <a class="btn-ico vb" href="#"></a>
+          </div>
+        </div>
+        <div class="pic"></div>
+        <div class="right">
+          <div class="name">У вас остались вопросы?</div>
+          <div class="desc">Подробно на них ответим и порекомендуем лучший способ решения.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer--contact-block__wrapper">
+  <div class="in">
+    <div class="footer--contact-block gray-radio-bg">
+      <div class="flex">
+        <div>
+          <div class="label">Свяжитесь с нами по телефону:</div>
+          <div class="phone">
+            <a href="tel:88009343434">8 800 934-34-34</a>
+          </div>
+        </div>
+        <div class="dotted-border-left">
+          <div class="label">Либо оставьте заявку и мы перезвоним вам в течение <span class="ico-clock"></span> 5 минут
+          </div>
+          <div class="form inline-form">
+            <input placeholder="Имя" type="text"/>
+            <input placeholder="Телефон" type="tel"/>
+            <input type="submit" value="Перезвоните мне" class="btn btn-secondary">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="line2">
+    <div class="in">
+      <div class="flex">
+        <div>
+          <div class="footer--logo">
+
+          </div>
+          <div class="copy">© 2010-2020</div>
+        </div>
+        <div>
+          <div class="footer--menu">
+            <ul>
+              <li><a href="/about">О нас</a></li>
+              <li><a href="/category">Каталог</a></li>
+              <li><a href="/blog">Блог</a></li>
+              <li><a href="/contacts">Контакты</a></li>
+              <li><a href="/#calculator">Калькулятор</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="flex flex-column">
+            <div>
+              Скупка радиодеталей в
+              <div class="selector footer--selector">
+                <div class="selector-title">Санкт-Петербурге</div>
+                <ul class="selector-dd">
+                  <li class="active"><span data-title="Санкт-Петербурге">Санкт-Петербург</span></li>
+                  <li><span data-title="Краснодаре">Краснодар</span></li>
+                  <li><span data-title="Новосибирске">Новосибирск</span></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="btn-group grayscale-button">
+                <a class="btn-primary" href="#">Оставить заявку</a>
+                <a class="btn-primary" href="#">Скачать прайс</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="to-right to-bottom">
+          <a class="developer" href="http://masshtab.kz" target="_blank">Разработка сайта «Масштаб»</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of footer-->
+
+
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview')
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+@import "../mixins/media";
+
+#header{
+  border-bottom:  1px solid rgba(#5d687a, 0.3);
+  padding-bottom: 11px;
+}
+
+.logo{
+  width: 254px;
+  height: 26px;
+  @include media-tablet{width: 150px;}
+  @include media-laptop{width: 254px;}
+  background: url('../img/logo2-19.svg') 0 0 no-repeat;
+  background-size: contain;
+  margin-left: 15px;
+  margin-top: 28px;
+}
+
+#top-menu{
+  margin-left: 75px;
+  margin-top: 32px;
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      list-style: none;
+      display: inline-block;
+      margin-right: 42px;
+      a{
+        text-transform: uppercase;
+        color: #5d687a;
+        text-decoration: none;
+        border-bottom:  1px solid rgba(#5d687a, 0.4);
+        font-size: 13px;
+        font-family: $fmed;
+        &:hover{
+          color: #000;
+          border-bottom:  2px solid rgba(#0bbc93, 1);
+        }
+      }
+    }
+  }
+}
+
+.top-selector-wrapper{
+  margin-top: 20px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+.top-selector-wrapper__title{
+  font-size: 13px;
+  color: #5d687a;
+}
+
+#header{
+  .flex{
+    justify-content: space-between;
+  }
+}
+.top-telephone{
+  font-family: $fmed;
+  font-size: 18px;
+  margin-top: 30px;
+  margin-left: 15px;
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.top-btn-group{
+  margin-top: 22px;
+  margin-left: 15px;
+  .btn{
+    margin-right: 10px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}

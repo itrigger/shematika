@@ -1,0 +1,86 @@
+.btn{
+  padding: 8px 17px;
+  text-decoration: none;
+  border: 2px solid;
+  border-radius: 3px;
+  font-family: $fmed;
+  font-size: 16px;
+  word-break: keep-all;
+  display: inline-block;
+  transition: 0.2s all;
+  overflow: hidden;
+  position: relative;
+  &.btn-primary{
+    color: #0bbc93;
+    border-color: #0bbc93;
+    &:hover{
+      background: #40cdad;
+      border-color: #40cdad;
+      color: #fff;
+      transition: 0.2s all;
+    }
+  }
+  &.btn-secondary{
+    color: #fff;
+    background: #0bbc93;
+    border-color: #0bbc93;
+    &:hover{
+      background: #40cdad;
+      border-color: #40cdad;
+      transition: 0.2s all;
+    }
+  }
+  &.btn-white{
+    border:1px solid #fff;
+    color:#fff;
+    &:hover{
+      background: #fff;
+      color: #0bbc93;
+    }
+  }
+  &.sm{
+    font-size: 16px;
+    padding: 7px 19px;
+  }
+}
+.btn.btn-wt{
+  padding-left: 50px;
+  position: relative;
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    left: 17px;
+    top: 5px;
+    background: url('/img/ico-wt-white.svg') 0 0 no-repeat;
+    background-size: contain;
+  }
+  &:hover{
+    &::before{
+      background: url('/img/ico-wt-green.svg') 0 0 no-repeat;
+    }
+  }
+}
+.btn.btn-vb{
+  padding-left: 50px;
+  position: relative;
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 23px;
+    height: 25px;
+    left: 17px;
+    top: 5px;
+    background: url('/img/ico-vb-white.svg') 0 0 no-repeat;
+    background-size: contain;
+  }
+  &:hover{
+    &::before{
+      background: url('/img/ico-vb-green.svg') 0 0 no-repeat;
+    }
+  }
+}
+

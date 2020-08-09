@@ -1,0 +1,503 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/*@import "utils/owl.carousel.min";
+@import "utils/owl.theme.default.min";*/
+@import "parts/grid";
+@import "utils/fonts";
+@import "utils/variables";
+@import "parts/buttons";
+@import "parts/form";
+
+body{
+  background: url('/img/temp.jpg') center top no-repeat;
+  padding-bottom: 2678px;
+  font-family: $freg;
+  font-size: 17px;
+}
+
+body *{
+  box-sizing: border-box;
+}
+
+.in{
+  max-width: 1470px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.selector{
+  display: inline-block;
+  position: relative;
+  .selector-title{
+    font-size: 13px;
+    padding-right: 19px;
+    background: url('/img/ico-dd.svg') right 8px no-repeat;
+    background-size: 9px 6px;
+    cursor: pointer;
+    span{
+      color: #5d687a;
+      border-bottom: 1px dotted #5d687a;
+    }
+  }
+  .selector-dd{
+    display: none;
+    padding: 7px;
+    background: #fff;
+    border-radius: 7px;
+    position: absolute;
+    z-index: 99999;
+    top: 10px;
+    right: -10px;
+    min-width: 210px;
+    box-shadow: 0 5px 10px rgba(#000, 0.2);
+    li{
+      padding: 10px 10px 10px 20px;
+      list-style: none;
+      position: relative;
+      cursor: pointer;
+      line-height: 0;
+      text-align: left;
+      span{
+        font-size: 17px;
+        line-height: 17px;
+      }
+      &.active{
+        background: #f2f4f5;
+        border-radius: 2px;
+        &:before{
+          content: '';
+          display: block;
+          width: 6px;
+          height: 6px;
+          background: #0bbc93;
+          border-radius: 50%;
+          left: 8px;
+          top: 16px;
+          position: absolute;
+        }
+      }
+      &:hover{
+        background: #f2f4f5;
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+.gray-radio-bg{
+  background: #5d687a;
+  border-radius: 10px;
+}
+
+.yellow-rounded{
+  font-size: 10px;
+  font-family: $fmed;
+  text-transform: uppercase;
+  color: #000;
+  display: inline-block;
+  height: 26px;
+  background: #fcd772;
+  padding: 7px 14px 5px;
+  border-radius: 20px;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: 21px;
+  height: 21px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: '';
+  width: 11px;
+  height: 11px;
+  background: #0bbc93;
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+h1{
+  font-family: $fmed;
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.main-page-map{
+  padding-top: 35px;
+  h1{
+    text-align: center;
+  }
+
+}
+
+.main-page-map--selector{
+  position: relative;
+  z-index: 1;
+  .selector-title{
+    font-size: 50px;
+    background: url('/img/ico-dd-dark.svg') right 34px no-repeat;
+    background-size: 14px 10px;
+    padding-right: 29px;
+  }
+  .selector-dd{
+    top: 25px;
+  }
+}
+.map{
+  iframe{
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.dotted-border-left{
+  position: relative;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    border-left: 1px dotted #c3c5c6;
+    left: -35px;
+  }
+}
+
+.ico-clock{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: url("/img/ico-clock.svg") 0 0 no-repeat;
+  position: relative;
+  top: 3px;
+}
+
+@import "parts/header";
+@import "parts/slider";
+@import "parts/calculator";
+@import "parts/mainpage";
+@import "parts/footer";
+
+
+/*
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+// usage
+.my-box {
+  padding: 10px;
+
+  @include for-desktop-up {
+    padding: 20px;
+  }
+}
+*/

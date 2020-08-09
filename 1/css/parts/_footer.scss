@@ -1,0 +1,95 @@
+.footer{
+  position: relative;
+  z-index: 99;
+  top: -64px;
+  .line1{
+    padding-top: 80px;
+    background: url('/img/foot-green-bg.svg') center top no-repeat;
+    background-size: cover;
+    min-height: 463px;
+    position: relative;
+    z-index: 2;
+    .pic{
+      width: 393px;
+      height: 328px;
+      background: url('/img/man.png') 0 0 no-repeat;
+      position: relative;
+      top: -80px;
+    }
+    .left{
+      color: #fff;
+      padding-left: 63px;
+      padding-top: 20px;
+      max-width: 345px;
+      .name{
+        font-family: $fmed;
+        font-size: 38px;
+      }
+      .title{
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+    }
+    .right{
+      color: #FFFFFF;
+      padding-top: 45px;
+      position: relative;
+      &:before{
+        display: block;
+        position: absolute;
+        content: '';
+        width: 83px;
+        height: 64px;
+        background: url('/img/quote.svg') 0 0 no-repeat;
+        background-size: contain;
+        left: -107px;
+        top: 60px;
+      }
+      .name{
+        font-family: $fmed;
+        font-size: 38px;
+      }
+      .desc{
+        font-size: 20px;
+      }
+    }
+  }
+  .line2{
+    border-top: 1px solid #ccc;
+    padding-top: 25px;
+  }
+  .footer--logo{
+    background: url("/img/footlogo/1.svg") 0 0 no-repeat;
+    width: 106px;
+    height: 122px;
+  }
+}
+.footer--contact-block__wrapper{
+  position: relative;
+  top: -140px;
+  margin-bottom: -90px;
+  z-index: 22;
+}
+.footer--contact-block{
+  padding: 55px 125px;
+  color: #FFFFFF;
+  font-size: 18px;
+  .label{
+    margin-bottom: 10px;
+  }
+  .flex{
+    justify-content: space-between;
+  }
+  .phone{
+    font-size: 45px;
+    font-family: $fmed;
+    a{
+      color: #fff;
+      text-decoration: none;
+      border-bottom: none;
+    }
+  }
+  .inline-form{
+    margin-top: 20px;
+  }
+}

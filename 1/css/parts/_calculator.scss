@@ -1,0 +1,140 @@
+#main-page--calculator{
+  position: relative;
+  top: -160px;
+  margin-bottom: -160px;
+  z-index: 99;
+}
+.calculator{
+  padding: 25px 35px 35px;
+
+  color: #fff;
+  select{
+    width: 310px;
+    height: 55px;
+    border-radius: 5px;
+    border: none;
+    padding: 0 17px;
+    option:disabled{
+      color: #999b9e;
+    }
+    &:focus, &:active{
+      outline: none !important;
+    }
+  }
+  input[type=text]{
+    height: 55px;
+    border-radius: 5px;
+    border: none;
+    width: 105px;
+    padding: 0 17px;
+    &:focus, &:active{
+      outline: none !important;
+    }
+  }
+  .row-total{
+    display: flex;
+    height: 55px;
+    border-radius: 5px;
+    width: auto;
+    background: #556782;
+    text-align: center;
+    align-items: center;
+    font-size: 26px;
+    padding: 0 15px;
+    border: 1px solid rgba(#fff,0.14);
+  }
+  .labeled-input{
+    display: flex;
+    align-items: center;
+    input, .row-total{
+      margin-left: 14px;
+    }
+  }
+  .radio-group{
+    display: flex;
+    align-items: center;
+    label{
+      margin-right: 20px;
+      cursor: pointer;
+      input{
+        margin-right: 20px;
+        cursor: pointer;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.els-header{
+  font-size: 26px;
+  margin-bottom: 17px;
+}
+
+.els-row{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.els-footer{
+  margin-top: 19px;
+  padding-top: 17px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(#fff,0.25);
+  .els-total-price{
+    margin-left: auto;
+  }
+}
+.els-total-price-num{
+  display: inline-block;
+}
+.el-add-row-btn{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  .btn-plus{
+    margin-right: 15px;
+  }
+  &:hover{
+    .btn-plus{
+      background: #617791;
+    }
+  }
+}
+.btn-plus{
+  color: #fff;
+  font-size: 26px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  border: 1px solid #fff;
+  background: #556782;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.els-total-price{
+  display: flex;
+  align-items: center;
+}
+.els-total-price-num{
+  font-size: 30px;
+  font-family: $fmed;
+  margin-left: 15px;
+  span{
+    font-size: 36px;
+    font-family: $fmed;
+  }
+}
+
+.send-btn-wrapper{
+  margin-left: 60px;
+  .btn{
+    font-size: 20px;
+    font-family: $fmed;
+    padding: 10px 20px;
+  }
+}
