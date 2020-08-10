@@ -1,7 +1,7 @@
 window.$ = require('jquery');
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
-
+import domtoimage from 'dom-to-image';
 
 const mySwiper = new Swiper('.swiper-container', {
   // Optional parameters
@@ -240,3 +240,17 @@ jQuery(document).ready(function(){
 * */
 
 /********/
+
+
+$(document).ready(function() {
+  $("#btn-Convert-Html2Image").on('click', function() {
+    let element = document.querySelector("#table");
+    domtoimage.toJpeg(element, { quality: 0.95 })
+      .then(function (dataUrl) {
+        let link = document.createElement('a');
+        link.download = 'my-image-name.jpeg';
+        link.href = dataUrl;
+        link.click();
+      });
+  });
+});

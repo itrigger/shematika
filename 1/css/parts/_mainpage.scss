@@ -75,9 +75,8 @@
   &:hover {
     border-color: #0bbc93;
     transition: 0.2s all;
-
     &:after {
-      right: 24px;
+      right: 14px;
       transition: 0.2s right;
     }
   }
@@ -369,13 +368,12 @@
     border-radius: 7px;
     position: relative;
     transition: 0.2s all;
-
     &:after {
       position: absolute;
       content: '';
       display: block;
-      right: 20px;
-      top: 10px;
+      right: 15px;
+      top: 13px;
       transition: 0.2s right;
       width: 35px;
       height: 21px;
@@ -383,11 +381,11 @@
     }
 
     &:hover {
-      border-color: #0bbc93;
+      background: #617791;
       transition: 0.2s all;
 
       &:after {
-        right: 24px;
+        right: 10px;
         transition: 0.2s right;
       }
     }
@@ -404,10 +402,12 @@
   .blog--item{
     background: #fff;
     border-radius: 10px;
+    transition: 0.3s all;
     .pic{
       display: inline-block;
       height: 216px;
-
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
     }
     a{
       text-decoration: none;
@@ -428,6 +428,12 @@
       font-size: 15px;
       display: inline-block;
       margin-top: 10px;
+    }
+    &:hover{
+      .title{
+        border-color: #000;
+        transition: 0.3s all;
+      }
     }
   }
 }

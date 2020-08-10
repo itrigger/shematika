@@ -376,6 +376,16 @@ textarea {
   .btn.sm {
     font-size: 16px;
     padding: 7px 19px; }
+  .btn.btn-footer {
+    color: #5d687a;
+    border-color: #5d687a;
+    font-size: 18px;
+    transition: all 0.3s; }
+    .btn.btn-footer:hover {
+      color: #424b56;
+      border-color: #424b56;
+      transition: all 0.3s;
+      background: transparent; }
 
 .btn.btn-wt {
   padding-left: 50px;
@@ -442,8 +452,7 @@ textarea {
     border-left: 1px solid #ccc; }
 
 body {
-  background: url("/img/temp.jpg") center top no-repeat;
-  padding-bottom: 2678px;
+  /*  background: url('/img/temp.jpg') center top no-repeat;*/
   font-family: "Stem-Regular", sans-serif;
   font-size: 17px; }
 
@@ -575,8 +584,12 @@ h1 {
 
 .main-page-map {
   padding-top: 35px; }
+  .main-page-map .in {
+    z-index: 3; }
   .main-page-map h1 {
-    text-align: center; }
+    text-align: center;
+    font-weight: normal;
+    font-family: "Stem-Regular", sans-serif; }
 
 .main-page-map--selector {
   position: relative;
@@ -585,7 +598,10 @@ h1 {
     font-size: 50px;
     background: url("/img/ico-dd-dark.svg") right 34px no-repeat;
     background-size: 14px 10px;
-    padding-right: 29px; }
+    padding-right: 29px;
+    font-family: "Stem-Medium", sans-serif; }
+    .main-page-map--selector .selector-title span {
+      color: #000; }
   .main-page-map--selector .selector-dd {
     top: 25px; }
 
@@ -914,7 +930,7 @@ h1 {
     border-color: #0bbc93;
     transition: 0.2s all; }
     .categories--btn-custom:hover:after {
-      right: 24px;
+      right: 14px;
       transition: 0.2s right; }
   .categories--btn-custom .span-block {
     width: 70px;
@@ -1138,17 +1154,17 @@ h1 {
     position: absolute;
     content: '';
     display: block;
-    right: 20px;
-    top: 10px;
+    right: 15px;
+    top: 13px;
     transition: 0.2s right;
     width: 35px;
     height: 21px;
     background: url("/img/white-arr-right.svg") 0 0 no-repeat; }
   .main-page--blog .btn-custom:hover {
-    border-color: #0bbc93;
+    background: #617791;
     transition: 0.2s all; }
     .main-page--blog .btn-custom:hover:after {
-      right: 24px;
+      right: 10px;
       transition: 0.2s right; }
   .main-page--blog .btn-custom .span-block {
     display: block;
@@ -1157,10 +1173,13 @@ h1 {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4); }
 .main-page--blog .blog--item {
   background: #fff;
-  border-radius: 10px; }
+  border-radius: 10px;
+  transition: 0.3s all; }
   .main-page--blog .blog--item .pic {
     display: inline-block;
-    height: 216px; }
+    height: 216px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden; }
   .main-page--blog .blog--item a {
     text-decoration: none; }
   .main-page--blog .blog--item .padded {
@@ -1177,16 +1196,20 @@ h1 {
     font-size: 15px;
     display: inline-block;
     margin-top: 10px; }
+  .main-page--blog .blog--item:hover .title {
+    border-color: #000;
+    transition: 0.3s all; }
 
 .footer {
   position: relative;
   z-index: 99;
-  top: -64px; }
+  top: -64px;
+  margin-bottom: -64px; }
   .footer .line1 {
     padding-top: 80px;
     background: url("/img/foot-green-bg.svg") center top no-repeat;
     background-size: cover;
-    min-height: 463px;
+    min-height: 400px;
     position: relative;
     z-index: 2; }
     .footer .line1 .pic {
@@ -1225,18 +1248,52 @@ h1 {
         font-size: 38px; }
       .footer .line1 .right .desc {
         font-size: 20px; }
+  .footer .line2--wrapper {
+    border-top: 1px solid #ccc; }
   .footer .line2 {
-    border-top: 1px solid #ccc;
-    padding-top: 25px; }
+    background: #f2f4f5;
+    padding-bottom: 30px;
+    padding-top: 160px; }
   .footer .footer--logo {
     background: url("/img/footlogo/1.svg") 0 0 no-repeat;
     width: 106px;
     height: 122px; }
+  .footer .footer--logo_title {
+    width: 139px;
+    height: 14px;
+    background: url("/img/footlogo-18.svg") 0 0 no-repeat;
+    background-size: contain;
+    margin-top: 20px; }
+  .footer .copy {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #5d687a; }
+  .footer .footer--menu {
+    margin-left: 110px;
+    margin-top: 10px; }
+    .footer .footer--menu ul {
+      margin: 0;
+      padding: 0; }
+      .footer .footer--menu ul li {
+        list-style: none;
+        margin-bottom: 7px; }
+        .footer .footer--menu ul li a {
+          font-size: 15px;
+          font-family: "Stem-Medium", sans-serif;
+          color: #5d687a;
+          text-decoration: none;
+          border-bottom: 1px solid rgba(93, 104, 122, 0.4);
+          transition: all 0.3s; }
+          .footer .footer--menu ul li a:hover {
+            color: #424b56;
+            border-color: #424b56;
+            transition: all 0.3s; }
 
 .footer--contact-block__wrapper {
   position: relative;
-  top: -140px;
-  margin-bottom: -90px;
+  top: -276px;
+  margin-bottom: -280px;
+  padding-bottom: 80px;
   z-index: 22; }
 
 .footer--contact-block {
@@ -1256,6 +1313,58 @@ h1 {
       border-bottom: none; }
   .footer--contact-block .inline-form {
     margin-top: 20px; }
+
+.footer--selector-wrapper {
+  margin-left: 160px;
+  font-size: 14px;
+  color: #5d687a;
+  margin-top: 10px; }
+
+.footer--selector .selector-title {
+  font-family: "Stem-Medium", sans-serif; }
+
+.footer--telephone {
+  display: inline-block;
+  margin-left: 15px;
+  line-height: 1; }
+  .footer--telephone a {
+    border-bottom: none;
+    text-decoration: none;
+    color: #5d687a;
+    font-family: "Stem-Medium", sans-serif;
+    font-size: 18px; }
+
+.footer--btn-group-wrapper {
+  margin-left: 160px;
+  margin-top: 37px; }
+  .footer--btn-group-wrapper .btn-group .btn:first-child {
+    margin-right: 10px; }
+
+.to-right {
+  margin-left: auto; }
+
+.to-bottom {
+  align-self: flex-end; }
+
+.maslogo-wrapper {
+  padding-right: 40px; }
+
+.developer {
+  position: relative;
+  font-size: 12px;
+  color: rgba(93, 104, 122, 0.7);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(93, 104, 122, 0.2); }
+  .developer:before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -45px;
+    background: url("/img/maslogo.svg") 0 0 no-repeat;
+    width: 136px;
+    height: 33px;
+    background-size: contain; }
 
 /*
 @mixin for-phone-only {

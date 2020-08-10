@@ -2,11 +2,12 @@
   position: relative;
   z-index: 99;
   top: -64px;
+  margin-bottom: -64px;
   .line1{
     padding-top: 80px;
     background: url('/img/foot-green-bg.svg') center top no-repeat;
     background-size: cover;
-    min-height: 463px;
+    min-height: 400px;
     position: relative;
     z-index: 2;
     .pic{
@@ -54,20 +55,63 @@
       }
     }
   }
-  .line2{
+  .line2--wrapper{
     border-top: 1px solid #ccc;
-    padding-top: 25px;
+  }
+  .line2{
+    background: #f2f4f5;
+    padding-bottom: 30px;
+    padding-top: 160px;
   }
   .footer--logo{
     background: url("/img/footlogo/1.svg") 0 0 no-repeat;
     width: 106px;
     height: 122px;
   }
+  .footer--logo_title{
+    width: 139px;
+    height: 14px;
+    background: url("/img/footlogo-18.svg") 0 0 no-repeat;
+    background-size: contain;
+    margin-top: 20px;
+  }
+  .copy{
+    margin-top: 20px;
+    font-size: 12px;
+    color: #5d687a;
+  }
+  .footer--menu{
+    margin-left: 110px;
+    margin-top: 10px;
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+        margin-bottom: 7px;
+        a{
+          font-size: 15px;
+          font-family: $fmed;
+          color: #5d687a;
+          text-decoration: none;
+          border-bottom: 1px solid rgba(#5d687a,0.4);
+          transition: all 0.3s;
+          &:hover{
+            color: #424b56;
+            border-color: #424b56;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+
 }
 .footer--contact-block__wrapper{
   position: relative;
-  top: -140px;
-  margin-bottom: -90px;
+  top: -276px;
+  margin-bottom: -280px;
+  padding-bottom: 80px;
   z-index: 22;
 }
 .footer--contact-block{
@@ -91,5 +135,64 @@
   }
   .inline-form{
     margin-top: 20px;
+  }
+}
+.footer--selector-wrapper{
+  margin-left: 160px;
+  font-size: 14px;
+  color: #5d687a;
+  margin-top: 10px;
+}
+.footer--selector{
+  .selector-title{
+    font-family: $fmed;
+  }
+}
+.footer--telephone{
+  display: inline-block;
+  margin-left: 15px;
+  line-height: 1;
+  a{
+    border-bottom: none;
+    text-decoration: none;
+    color: #5d687a;
+    font-family: $fmed;
+    font-size: 18px;
+  }
+}
+.footer--btn-group-wrapper{
+  margin-left: 160px;
+  margin-top: 37px;
+  .btn-group{
+    .btn:first-child{
+      margin-right: 10px;
+    }
+  }
+}
+.to-right{
+  margin-left: auto;
+}
+.to-bottom{
+  align-self: flex-end;
+}
+.maslogo-wrapper{
+  padding-right: 40px;
+}
+.developer{
+  position: relative;
+  font-size: 12px;
+  color: rgba(#5d687a,0.7);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(#5d687a,0.2);
+  &:before{
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -45px;
+    background: url("/img/maslogo.svg") 0 0 no-repeat;
+    width: 136px;
+    height: 33px;
+    background-size: contain;
   }
 }

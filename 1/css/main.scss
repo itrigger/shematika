@@ -270,8 +270,7 @@ textarea {
 @import "parts/form";
 
 body{
-  background: url('/img/temp.jpg') center top no-repeat;
-  padding-bottom: 2678px;
+/*  background: url('/img/temp.jpg') center top no-repeat;*/
   font-family: $freg;
   font-size: 17px;
 }
@@ -420,8 +419,13 @@ h1{
 
 .main-page-map{
   padding-top: 35px;
+  .in{
+    z-index: 3;
+  }
   h1{
     text-align: center;
+    font-weight: normal;
+    font-family: $freg;
   }
 
 }
@@ -434,6 +438,10 @@ h1{
     background: url('/img/ico-dd-dark.svg') right 34px no-repeat;
     background-size: 14px 10px;
     padding-right: 29px;
+    font-family: $fmed;
+    span{
+      color: #000;
+    }
   }
   .selector-dd{
     top: 25px;
