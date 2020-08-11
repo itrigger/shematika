@@ -20,6 +20,8 @@
   <link href="css/main.scss" rel="stylesheet">
 
   <meta content="#fafafa" name="theme-color">
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -127,32 +129,40 @@
 <!--calculator module-->
 <div class="in">
   <div class="calculator gray-radio-bg" id="main-page--calculator">
-    <div class="els-header">Что продаёте?</div>
-    <div class="flex els-body">
-      <div class="els-row">
+    <div class="els-header">Что продаёте?
+      <div class="spinner loader">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
+    <div class="flex els-body flex-column">
+      <div class="els-row els-row-1" data-id="1">
         <div class="el-wrap">
-          <select id="el-type" name="el-type">
+          <select class="el-type el-type-1" name="el-type">
             <option disabled hidden selected value="">Выберите тип элемента</option>
           </select>
         </div>
         <div class="el-wrap">
-          <select id="el-name" name="el-name">
+          <select class="el-name el-name-1" name="el-name">
             <option disabled hidden selected value="">Наименование</option>
           </select>
         </div>
         <div class="el-wrap radio-group">
-          <div id="itemprice"></div>
+          <div class="itemprice"></div>
           <!--<input checked id="row1_1" name="el-condition" type="radio"><label for="row1_1">Б/у</label>
           <input id="row1_2" name="el-condition" type="radio"><label for="row1_2">Новый</label>-->
         </div>
         <div class="el-wrap labeled-input">
           <label>Количество
-            <input placeholder="шт." type="text" value=""/>
+            <input placeholder="шт." type="text" value="" class="inputCount inputCount-1"/>
           </label>
         </div>
-        <div class="el-wrap labeled-input input-dark">
+        <div class="el-wrap labeled-input input-dark to-right">
           <label>Сумма</label>
-          <div class="row-total">9400 ₽</div>
+          <div class="row-total row-total-1"><span>0</span> ₽</div>
         </div>
       </div>
     </div>
@@ -164,7 +174,7 @@
       <div class="els-total-price">
         <span class="yellow-rounded">Итого</span>
         <div class="els-total-price-num" id="els-total-price-num">
-          <span>7778</span> ₽
+          <span>0</span> ₽
         </div>
       </div>
       <div class="send-btn-wrapper">
@@ -348,11 +358,11 @@
     </h1>
   </div>
   <div class="map">
-    <iframe
+   <!-- <iframe
       frameborder="0"
       height="410"
       src="https://yandex.ru/map-widget/v1/?um=constructor%3A20d4feb11df4425ab2ae6e2851e482f55e318556bf839f4c728556f7aae09868&amp;source=constructor"
-      width="100%"></iframe>
+      width="100%"></iframe>-->
   </div>
 </div>
 <!--end of main-page-map-->
@@ -484,8 +494,7 @@
   </div>
 </div>
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <script>
