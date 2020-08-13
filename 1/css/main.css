@@ -860,7 +860,8 @@ h1 {
     display: flex;
     align-items: center; }
     .calculator .labeled-input input, .calculator .labeled-input .row-total {
-      margin-left: 14px; }
+      margin-left: 14px;
+      margin-right: 10px; }
   .calculator .radio-group {
     display: flex;
     align-items: center; }
