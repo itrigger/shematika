@@ -7,6 +7,7 @@
 .calculator{
   padding: 25px 35px 20px;
   color: #fff;
+  transition: all 0.3s;
   select{
     width: 310px;
     height: 55px;
@@ -72,6 +73,10 @@
   border: 2px solid red !important;
 }
 
+.els-body{
+  transition: all 0.3s;
+}
+
 .els-header{
   font-size: 26px;
   margin-bottom: 17px;
@@ -83,6 +88,12 @@
   width: 100%;
   margin-bottom: 20px;
   position: relative;
+  transition: 0.3s all;
+  opacity: 1;
+  &.collapsed{
+    opacity: 0;
+    transition: 0.3s all;
+  }
 }
   .els-del{
     display: flex;
