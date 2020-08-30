@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "@fancyapps/fancybox": "^3.5.7",
     "babel-core": "^7.0.0-bridge.0",
     "dom-to-image": "^2.6.0",
     "jquery": "^3.5.1",

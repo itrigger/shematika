@@ -1,4 +1,6 @@
 window.$ = require('jquery');
+window.jQuery = $;
+require("@fancyapps/fancybox");
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 import domtoimage from 'dom-to-image';
@@ -136,8 +138,10 @@ $(document).ready(function () {
   const isLoading = (cond) => {
     if (cond === 1) {
       $(".loader").css("opacity", "1");
+      $(".els-body").addClass("disabled");
     } else {
       $(".loader").css("opacity", "0");
+      $(".els-body").removeClass("disabled");
     }
   }
 
@@ -169,7 +173,7 @@ $(document).ready(function () {
         let lsArr = [];
         if (localStorage.getItem('order') !== null) {
           lsArr = JSON.parse(localStorage.getItem('order'));
-          getFromLs(lsArr).then(r => console.log('ok'));
+          getFromLs(lsArr).then(r => console.log('Data loaded from local storage!'));
         }
       }
     )
@@ -407,32 +411,26 @@ $(document).ready(function () {
   //в эту функцию передаем объект из локального хранилища, где из него создаются и заполняются данными строки
   async function getFromLs(lsArr) {
     isLoading(1);
+    $(".els-body").addClass("disabled");
     for (const [i, arr] of lsArr.entries()) {
       //вызываем асинхронную функцию создания строки
+      $(".loading_text").text("Загружено "+(i+1)+" из " + lsArr.length);
       await buildRow(arr[0], i + 1, arr[3]);
     }
     //пересчитываем итоговую цену
     await getTotalPrice();
+    $(".loading_text").text('');
+    $(".els-body").removeClass("disabled");
     isLoading(0);
   }
 
   //Кнопка ОФОРМИТЬ ЗАЯВКУ. Отсылает все данные на почту (через форму CF7)
   $(".send-btn-wrapper a").on('click', function (e) {
-/*    let lsArr = [];
-    if (localStorage.length > 0) {
-      lsArr = JSON.parse(localStorage.getItem('order'));
-    }
-    getFromLs(lsArr).then(r => console.log('ok'));*/
+
     e.stopPropagation();
-    //buildRow(24,1,2);
+
   })
 
-
-  /**/
-  /**/
-  /**/
-  /**/
-  /**/
 
   /*Построение строки с данными из локального хранилища*/
   async function buildRow(id, rowCol, col) { //id элемента, rowCol порядковый номер создаваемой строки, col кол-во элементов данного типа
@@ -446,6 +444,8 @@ $(document).ready(function () {
       if (rowCol > 1) {
         await createRow(rowCol);
         $row = $(".els-row-" + rowCol);
+      } else {
+        $row = $(".els-row-1");
       }
 
       await getItemById(id).then(item => {
@@ -551,12 +551,12 @@ $(document).ready(function () {
 
     $(".els-body").append('<div class="els-row els-row-' + rowId + ' collapsed" data-id="' + rowId + '">\n' +
       '        <div class="els-del">×</div><div class="el-wrap">\n' +
-      '          <select class="el-type el-type-' + rowId + '" name="el-type" disabled>\n' +
+      '          <select class="el-type" name="el-type" disabled>\n' +
       '            <option disabled hidden selected value="">Выберите тип элемента</option>\n' +
       '          </select>\n' +
       '        </div>\n' +
       '        <div class="el-wrap">\n' +
-      '          <select class="el-name el-name-' + rowId + '" name="el-name" disabled>\n' +
+      '          <select class="el-name" name="el-name" disabled>\n' +
       '            <option disabled hidden selected value="">Наименование</option>\n' +
       '          </select>\n' +
       '        </div>\n' +
@@ -565,16 +565,16 @@ $(document).ready(function () {
       '        </div>\n' +
       '        <div class="el-wrap labeled-input">\n' +
       '          <label>Количество\n' +
-      '            <input  type="text" value="1" class="inputCount inputCount-' + rowId + '"/> <span class="typeOfCount typeOfCount-' + rowId + '">кг.</span>\n' +
+      '            <input  type="text" value="1" class="inputCount"/> <span class="typeOfCount">кг.</span>\n' +
       '          </label>\n' +
       '        </div>\n' +
       '        <div class="el-wrap labeled-input input-dark to-right">\n' +
       '          <label>Сумма</label>\n' +
-      '          <div class="row-total row-total-' + rowId + '"><span>0</span> ₽</div>\n' +
+      '          <div class="row-total"><span>0</span> ₽</div>\n' +
       '        </div>\n' +
       '      </div>');
     // заполнение родительского селекта уже полученными данными о категориях
-    let currentDD = $(".el-type-" + rowId);
+    let currentDD = $(".els-row-"+rowId).find(".el-type");
     isLoading(1);
     $.each(categoriesAPI, function () {
       currentDD.append($("<option />").val(this.id).text(this.name));
@@ -587,14 +587,8 @@ $(document).ready(function () {
 
   }
 
-  /**/
-  /**/
-  /**/
-  /**/
-  /**/
 
-
-  //price composing
+  //Высчитывание цены
   const getPrice = function (id, countTotal) { //id - номер строки
     let item_price = 0;
     let $row = $('.els-row-' + id);
@@ -635,13 +629,6 @@ $(document).ready(function () {
 
   }
 
-/*
-*ToDo: Проверка некорректна, когда удалена строка из середины списка.
-* Надо при удалении наверное переписывать классы. Либо надо хранить номер последней созданной строки
-* Надо при удалении удалять из локального хранилища данные.
-* +- Сделать плавное открытие новое строки
-*/
-
 // Добавление новой строки (тут проверка, заполнена ли предыдущая строка)
   $(".el-add-row-btn").on('click', function () {
 
@@ -650,7 +637,7 @@ $(document).ready(function () {
       notify("Заполните все поля!", "error");
       $('.els-row-' + rowsCount).find(".el-name").addClass('input-error');
     } else {
-      if (!($('.inputCount-' + rowsCount).val())) {
+      if (!($('.els-row-' + rowsCount).find('.inputCount').val())) {
         harddelete_notify();
         notify("Заполните все поля!", "error");
         $('.inputCount-' + rowsCount).find(".el-name").addClass('input-error');
@@ -660,12 +647,12 @@ $(document).ready(function () {
         rowsCount += 1;
         $(".els-body").append('<div class="els-row els-row-' + rowsCount + ' collapsed" data-id="' + rowsCount + '">\n' +
           '        <div class="els-del">×</div><div class="el-wrap">\n' +
-          '          <select class="el-type el-type-' + rowsCount + '" name="el-type" disabled>\n' +
+          '          <select class="el-type" name="el-type" disabled>\n' +
           '            <option disabled hidden selected value="">Выберите тип элемента</option>\n' +
           '          </select>\n' +
           '        </div>\n' +
           '        <div class="el-wrap">\n' +
-          '          <select class="el-name el-name-' + rowsCount + '" name="el-name" disabled>\n' +
+          '          <select class="el-name" name="el-name" disabled>\n' +
           '            <option disabled hidden selected value="">Наименование</option>\n' +
           '          </select>\n' +
           '        </div>\n' +
@@ -674,12 +661,12 @@ $(document).ready(function () {
           '        </div>\n' +
           '        <div class="el-wrap labeled-input">\n' +
           '          <label>Количество\n' +
-          '            <input  type="text" value="1" class="inputCount inputCount-' + rowsCount + '"/> <span class="typeOfCount typeOfCount-' + rowsCount + '">кг.</span>\n' +
+          '            <input  type="text" value="1" class="inputCount"/> <span class="typeOfCount">кг.</span>\n' +
           '          </label>\n' +
           '        </div>\n' +
           '        <div class="el-wrap labeled-input input-dark to-right">\n' +
           '          <label>Сумма</label>\n' +
-          '          <div class="row-total row-total-' + rowsCount + '"><span>0</span> ₽</div>\n' +
+          '          <div class="row-total"><span>0</span> ₽</div>\n' +
           '        </div>\n' +
           '      </div>');
         // заполнение родительского селекта уже полученными данными о категориях
@@ -702,12 +689,20 @@ $(document).ready(function () {
   $parentEl.on('click', '.els-del', function () {
     delete_notify();
     let rowId = $(this).parent().attr("data-id");
+    let visibleRowsCount = $('.els-body .els-row').length;
 
+    // Удаление строки
     $(this).parent().remove();
+
+    //Переписывание классов els-row-N, чтобы шли по порядку
+    $('.els-body .els-row').each(function (index) {
+      $(this).removeClass();
+      $(this).addClass("els-row els-row-"+(index+1));
+      $(this).attr('data-id',index+1);
+    })
 
     removeFromLS(rowId);
 
-    let visibleRowsCount = $('.els-body .els-row').length;
     if (visibleRowsCount > 1) {
       $('.els-row:last-child').prepend('<div class="els-del">×</div>');
     }
@@ -715,6 +710,31 @@ $(document).ready(function () {
 
     getTotalPrice(); // пересчет итоговой цены
   })
+
+
+  //Заполняем скрытые поля в форме ContactForm7 данными из локального хранилища
+  $('.send-btn-wrapper a').on('click', function(e){
+    e.preventDefault();
+    $.fancybox.open({
+      src  : '#popupform',
+      type : 'inline',
+      opts : {
+        afterShow : function( instance, current ) {
+          let lsArr = JSON.parse(localStorage.getItem('order'));
+          for (const [i, arr] of lsArr.entries()) {
+            $("#z1").val($("#z1").val() + "_" +arr[1]);
+            $("#z2").val($("#z2").val() + "_" +arr[2]);
+            $("#z3").val($("#z3").val() + "_" +arr[3]);
+            $("#z4").val($("#z4").val() + "_" +arr[5]);
+          }
+        }
+      }
+    });
+    /*
+*/
+  });
+
+
 
 });
 
@@ -736,7 +756,6 @@ jQuery(document).ready(function(){
 
 /********/
 
-
 $(document).ready(function () {
   $("#btn-Convert-Html2Image").on('click', function () {
     let element = document.querySelector("#table");
@@ -751,19 +770,10 @@ $(document).ready(function () {
 });
 
 /* ToDO
-* 0. Максимальное кол-во строк в калькуляторе??
-1. Парсинг цен+++
-2. Калькуляция цены+++
-3. Сохранение данных в локалсторэдж+++
-4. Отправка данных на почту
-*
-* в итерации
-* 1. Из сохраненных данных заполнить первый селект
-* 2. В первом селекте выбрать нужный оптион
-* 3. Подгрузить во второй селект данные по ИД
-* 4. Выбрать во втором селекте нужный оптион
-* 5. Установить кол-во в инпут
-* 6. Просчитать общую цену??
-* 7. Создать новую строку
+    0. Максимальное кол-во строк в калькуляторе??
+    1. Сделать проверку на "только цифры" в поле ввода кол-ва
+    4. Отправка данных на почту
+    5. Формирование таблицы с прайсом и сохранение в пдф
+    6. BUG! На движке при первой загрузке не заполняется дочерний селект
 */
 

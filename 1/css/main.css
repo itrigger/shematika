@@ -880,10 +880,17 @@ h1 {
 
 .els-body {
   transition: all 0.3s; }
+  .els-body.disabled {
+    pointer-events: none;
+    opacity: 0.8; }
 
 .els-header {
   font-size: 26px;
   margin-bottom: 17px; }
+
+.loading_text {
+  display: inline-block;
+  font-size: 15px; }
 
 .els-row {
   display: flex;
